@@ -42,24 +42,7 @@
 | Security      | Spring Security with JWT        |
 | Database      | MySQL (with optional H2)        |
 | Build Tool    | Maven                          |
-| Logging       | SLF4J + Logback                |
 | Rich Text     | TinyMCE                        |
-
----
-
-##  Project Structure
-
-```
-src/
- main/
-    java/
-       com.flowbit/           # All controllers, services, entities, repositories
-    resources/
-       templates/             # JSP files
-       static/                # CSS, JS, images
-       application.properties
- test/                          # Unit and integration tests
-```
 
 ---
 
