@@ -156,4 +156,4 @@ Licensed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 ---
 
-> Made with  and  by Team FlowBit
+> Made with ❤️ and  by Team FlowBit
