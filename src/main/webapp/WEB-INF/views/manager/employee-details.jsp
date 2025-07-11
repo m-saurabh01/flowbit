@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="date" uri="http://example.com/tags/dateutils"%>
+<%@ include file="/WEB-INF/views/partials/flowbit-header.jspf" %>
 
 <html>
 <head>
@@ -10,6 +11,7 @@
 <script src="/js/bootstrap.bundle.min.js"></script>
 <script src="/js/jquery-3.6.0.min.js"></script>
 <script src="/js/tinymce/tinymce.min.js"></script>
+<link rel="stylesheet" href="/css/offset.css" />
 </head>
 <body class="bg-light">
 	<div class="container mt-5">

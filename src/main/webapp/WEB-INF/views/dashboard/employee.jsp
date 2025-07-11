@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="date" uri="http://example.com/tags/dateutils"%>
+<%@ include file="/WEB-INF/views/partials/flowbit-header.jspf" %>
 <html>
 <head>
 <title>Employee Dashboard</title>
@@ -8,6 +9,7 @@
 <link rel="stylesheet" href="<c:url value='/css/bootstrap-icons.css'/>" />
 <script src="<c:url value='/js/chart-my.js'/>"></script>
 <script src="<c:url value='/js/jquery-3.6.0.min.js'/>"></script>
+<link rel="stylesheet" href="/css/offset.css" />
 <style>
 #taskTableContainer {
 	max-height: 400px;
@@ -48,9 +50,10 @@
 				</a> <a href="/mapping/request" class="btn btn-outline-info me-2"> <i
 					class="bi bi-link-45deg me-1"></i> Request Mapping
 				</a>
-				<button onclick="logout()" class="btn btn-outline-danger">
-					<i class="bi bi-box-arrow-right me-1"></i> Logout
-				</button>
+				<form action="/logout" method="post" class="d-inline">
+					<button class="btn btn-outline-danger"><i class="bi bi-box-arrow-right me-1 px-1"></i>Logout</button>
+				</form>
+				
 			</div>
 		</div>
 

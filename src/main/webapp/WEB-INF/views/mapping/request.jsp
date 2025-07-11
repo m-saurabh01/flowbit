@@ -1,10 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="/WEB-INF/views/partials/flowbit-header.jspf" %>
 <html>
 <head>
 <title>Request Manager Mapping</title>
 <link rel="stylesheet" href="/css/bootstrap.css" />
 <link rel="stylesheet" href="/css/bootstrap-icons.css" />
+<link rel="stylesheet" href="/css/offset.css" />
 </head>
 <body class="bg-light">
 	<div class="container mt-5">

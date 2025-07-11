@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.servlet.http.HttpSession;
+
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Safelist;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,11 +51,12 @@ public class DashboardController {
 	MappingRequestService mappingRequestService;
 
 	@GetMapping("/dashboard")
-	public String showDashboard(Authentication authentication, Model model) {
+	public String showDashboard(Authentication authentication,HttpSession session, Model model) {
 
 		// 1. Get the logged-in user
 		String email = authentication.getName();
 		User user = userService.findByEmail(email);
+		session.setAttribute("currentUser", user);
 		model.addAttribute("user", user);
 
 		if (user.getRole() == Role.ADMIN) {

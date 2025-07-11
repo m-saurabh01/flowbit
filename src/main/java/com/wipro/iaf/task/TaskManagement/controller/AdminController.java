@@ -4,7 +4,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,7 +37,12 @@ public class AdminController {
     @Autowired private MappingRequestService mappingService;
 
     @GetMapping("/dashboard")
-    public String showAdminDashboard(Model model) {
+    public String showAdminDashboard(Model model, HttpSession session,Authentication auth) {
+    	
+    	
+    	    User user = userService.findByEmail(auth.getName());
+    	    session.setAttribute("currentUser", user);
+
         List<Task> tasks = taskService.getAllTasks();
 
         List<User> users = userService.getAllUsers().stream()

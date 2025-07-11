@@ -1,39 +1,39 @@
 
-# 🚀 FlowBit – Role-Based Task Management System
+#  FlowBit  Role-Based Task Management System
 
 **FlowBit** is a full-featured, role-based Task Management System built using **Spring Boot**, **JSP**, and **MySQL**, designed for enterprises and teams to streamline task assignment, tracking, and approvals. With real-time dashboards, analytics, file attachments, and employee-manager workflows, FlowBit brings structure and clarity to your project operations.
 
 ---
 
-## 🧩 Features
+##  Features
 
-### 👤 User & Role Management
+###  User & Role Management
 - Role-based access: Admin, Manager, Employee
 - Role upgrade and mapping requests with approval flow
 - Secure authentication with JWT
 
-### 📋 Task Management
+###  Task Management
 - Task creation with priority, tags, estimated/actual hours
 - Multi-user assignment & manager-only control
-- Status lifecycle: NOT_STARTED → IN_PROGRESS → IN_REVIEW → DONE
+- Status lifecycle: NOT_STARTED  IN_PROGRESS  IN_REVIEW  DONE
 - Manager review and approval flow
 - Rich-text descriptions, comments, and logs
 - File attachments per task
 
-### 📈 Dashboards
+###  Dashboards
 - Separate dashboards for Admins, Managers, and Employees
 - Status & priority-based charts (Pie/Bar)
 - Weekly deadline stats, hours tracking, overdue tasks
 - Filterable/searchable tables for tasks, users, and logs
 
-### 🔒 Security & Control
+###  Security & Control
 - Role-based authorization using Spring Security `@PreAuthorize`
 - Secure password change functionality for users and admins
 - Validation and sanitization of user inputs
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Layer         | Technology                     |
 |--------------|---------------------------------|
@@ -47,15 +47,30 @@
 
 ---
 
+##  Project Structure
 
-## ⚙️ Getting Started
+```
+src/
+ main/
+    java/
+       com.flowbit/           # All controllers, services, entities, repositories
+    resources/
+       templates/             # JSP files
+       static/                # CSS, JS, images
+       application.properties
+ test/                          # Unit and integration tests
+```
 
-### ✅ Prerequisites
+---
+
+##  Getting Started
+
+###  Prerequisites
 - Java 8+
 - Maven 3.6+
 - MySQL 5.7/8.0 (or H2 for local testing)
 
-### 🔧 Setup
+###  Setup
 
 1. **Clone the repository**
 
@@ -86,7 +101,7 @@
 
 ---
 
-## 🔐 Default Roles & Credentials
+##  Default Roles & Credentials
 
 | Role   | Email             | Password |
 |--------|-------------------|----------|
@@ -96,13 +111,25 @@
 
 ---
 
-## 📊 Screenshots
+##  Screenshots
 
-> _You can attach dashboard, task view, charts, and login/signup screenshots here._
+### Login Page
+![Login Screenshot](screenshots/login-page.png)
+
+### Admin Dashboard
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+### Manager Dashboard
+![Task View](screenshots/manager-dashboard.png)
+
+### Employee Dashboard
+![Task View](screenshots/employee-dashboard.png)
+
 
 ---
 
-## 👨‍💻 Contributing
+
+##  Contributing
 
 1. Fork the project
 2. Create a new branch: `git checkout -b feature/your-feature`
@@ -112,13 +139,13 @@
 
 ---
 
-## 📃 License
+##  License
 
 Licensed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 ---
 
-## 🙏 Acknowledgements
+##  Acknowledgements
 
 - Spring Boot
 - Bootstrap 5
@@ -129,4 +156,4 @@ Licensed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 ---
 
-> Made with 💡 and 💻 by Team FlowBit
+> Made with  and  by Team FlowBit

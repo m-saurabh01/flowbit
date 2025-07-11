@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ include file="/WEB-INF/views/partials/flowbit-header.jspf" %>
 <html>
 <head>
 <title>Administrator Dashboard</title>
 <link rel="stylesheet" href="/css/bootstrap.css" />
 <link rel="stylesheet" href="/css/bootstrap-icons.css">
-
+<link rel="stylesheet" href="/css/offset.css" />
 <style>
 .card-custom {
 	border-radius: 10px;
@@ -58,9 +59,9 @@
 
 		<div class="d-flex justify-content-between align-items-center mb-3">
 			<h2>Administrator Dashboard</h2>
-			<form method="post" action="/logout" class="d-inline">
-				<button class="btn btn-danger">Logout</button>
-			</form>
+			<form action="/logout" method="post" class="d-inline">
+					<button class="btn btn-danger"><i class="bi bi-box-arrow-right me-1 px-1"></i>Logout</button>
+				</form>
 		</div>
 
 		<ul class="nav nav-tabs" id="adminTabs" role="tablist">

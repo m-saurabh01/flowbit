@@ -1,5 +1,8 @@
 package com.wipro.iaf.task.TaskManagement.config;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +17,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import javax.servlet.http.Cookie;
 
 @Configuration
 @EnableWebSecurity
@@ -43,15 +45,23 @@ public class SecurityConfig {
             	)
             .addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
             .logout(logout -> logout
-                    .logoutUrl("/logout")
-                    .logoutSuccessHandler((request, response, authentication) -> {
-                        Cookie cookie = new Cookie("token", null);
-                        cookie.setPath("/");
-                        cookie.setMaxAge(0); // delete immediately
-                        response.addCookie(cookie);
-                        response.sendRedirect("/login");
-                    })
-                )
+            	    .logoutUrl("/logout")
+            	    .logoutSuccessHandler((request, response, authentication) -> {
+            	        HttpSession session = request.getSession(false);
+            	        if (session != null) {
+            	            session.invalidate();
+            	        }
+
+            	        Cookie cookie = new Cookie("token", null);
+            	        cookie.setPath("/");
+            	        cookie.setHttpOnly(true);
+            	        cookie.setMaxAge(0);
+            	        response.addCookie(cookie);
+
+            	        response.sendRedirect("/login");
+            	    })
+            	)
+
             .build();
     }
 
