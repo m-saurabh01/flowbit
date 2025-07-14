@@ -50,7 +50,6 @@ public class UserServiceImpl implements UserService{
 
 	    existingUser.setName(updatedUser.getName());
 
-	    // ✅ Handle password change only if it's filled
 	    if (updatedUser.getPassword() != null && !updatedUser.getPassword().trim().isEmpty()) {
 	        String hashed = passwordEncoder.encode(updatedUser.getPassword());
 	        existingUser.setPassword(hashed);
@@ -60,12 +59,10 @@ public class UserServiceImpl implements UserService{
 	    
 	    System.out.println(updatedUser);
 
-	    // ✅ Prevent ADMIN promotion
 	    if (updatedUser.getRole() == Role.ADMIN) {
 	        message = "You cannot request Admin role.";
 	    } 
 	    else if (updatedUser.getRole() == Role.MANAGER) {
-	        // ✅ Check if already pending
 	        if (!existingUser.getRole().equals(Role.MANAGER) && !existingUser.isPendingManagerApproval()) {
 	            existingUser.setPendingManagerApproval(true);
 	            existingUser.setRole(Role.EMPLOYEE); 

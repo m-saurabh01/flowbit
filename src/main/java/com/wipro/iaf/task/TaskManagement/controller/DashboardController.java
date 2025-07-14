@@ -251,7 +251,7 @@ public class DashboardController {
 
 	    User employee = userService.getUserById(employeeId).get();
 	    
-	    if (!employee.getManager().getId().equals(manager.getId())) {
+	    if (employee.getManager()==null || !employee.getManager().getId().equals(manager.getId())) {
 	        return "error/403"; 
 	    }
 
